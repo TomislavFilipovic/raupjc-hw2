@@ -46,16 +46,22 @@ namespace hw_02_07
 
         private static int CalcFact(int n)
         {
-            if (n < 1)
-            {
-                return 0;
-            }
             int result = 1;
-            for (int i = 1; i <= n; i++)
+            if (n > 1)
             {
-                result *= i;
+                for (int i = 1; i <= n; i++)
+                {
+                    result *= i;
+                }
             }
-            return result;
+            int sum = 0;
+            while (result != 0)
+            {
+                sum += result % 10;
+                result /= 10;
+            }
+           
+            return sum;
         }
     }
 }
